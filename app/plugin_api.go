@@ -229,6 +229,10 @@ func (api *PluginAPI) GetChannelByName(teamId, name string, includeDeleted bool)
 	return api.app.GetChannelByName(name, teamId, includeDeleted)
 }
 
+func (api *PluginAPI) GetChannelsForTeamForUser(teamId, userId string, includeDeleted bool) (*model.ChannelList, *model.AppError) {
+	return api.app.GetChannelsForUser(teamId, userId, includeDeleted)
+}
+
 func (api *PluginAPI) GetChannelByNameForTeamName(teamName, channelName string, includeDeleted bool) (*model.Channel, *model.AppError) {
 	return api.app.GetChannelByNameForTeamName(channelName, teamName, includeDeleted)
 }

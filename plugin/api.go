@@ -125,6 +125,9 @@ type API interface {
 	// GetChannelByNameForTeamName gets a channel by its name, given a team name.
 	GetChannelByNameForTeamName(teamName, channelName string, includeDeleted bool) (*model.Channel, *model.AppError)
 
+	// GetChannelsForTeamForUser gets a list channels of on a team for a user.
+	GetChannelsForTeamForUser(teamId, userId string, includeDeleted bool) (*model.ChannelList, *model.AppError)
+
 	// GetDirectChannel gets a direct message channel.
 	GetDirectChannel(userId1, userId2 string) (*model.Channel, *model.AppError)
 
